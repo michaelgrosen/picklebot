@@ -22,41 +22,96 @@ file_path=os.path.join(path, filename);
 
 print(file_path);
 
-
 chrome_options = Options()
 chrome_options.add_experimental_option('detach', True)
 chrome_driver = webdriver.Chrome()
 
 web = webdriver.Chrome()
 
-web.get('https://www.sevenrooms.com/reservations/playpkl?duration_picker=true&client_id=0fdfb5e4075736517a53e85e3fafdd34853e8f6888f06e392121cb202d992ef85f12a9fa93c1171afddf73133ae8b80a31b22c2611ecbb3d33e8827cff02b407')
+web.get('https://clients.mindbodyonline.com/asp/adm/adm_appt_search.asp?studioid=5730220&tabID=102&fl=true')
 
 time.sleep(2)
 
-SearchButton = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div[5]/div/button')
-SearchButton.click()
+SelectThSNPeak = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td/input')
+SelectThSNPeak.click()
 
 time.sleep(2)
 
-####CalendarDropdown = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/button')
-####CalendarDropdown.click()
+WhchThSNPeak = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[5]/div[2]/table/tbody/tr[4]/td/input')
+WhchThSNPeak.click()
+
+time.sleep(2)
+
+NoSunday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[1]')
+NoSunday.click()
+
+time.sleep(2)
+
+NoMonday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[2]')
+NoMonday.click()
+
+time.sleep(2)
+
+NoTuesday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[3]')
+NoTuesday.click()
+
+time.sleep(2)
+
+NoWednesday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[4]')
+NoWednesday.click()
+
+time.sleep(2)
+
+SearchForTimes = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/input[10]')
+SearchForTimes.click()
 
 time.sleep(2)
 
 html = web.find_element(By.TAG_NAME, 'html')
 html.send_keys(Keys.END)
 
-time.sleep(4)
+time.sleep(1)
+
+SelectTime = web.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div/div[2]/div/div[6]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[8]/td[3]/a')
+SelectTime.click()
+
+time.sleep(2)
+
+BookAppointment = web.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div/div[2]/div/div[6]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[8]/td[3]/a')
+BookAppointment.click()
+
+time.sleep(2)
+
+PurchaseItem = web.find_element(By.XPATH, '/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div/div/div/ul/li/div[1]/div')
+PurchaseItem.click()
+
+time.sleep(2)
+
+CheckOut = web.find_element(By.XPATH, '/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div[3]/div/input[3]')
+CheckOut.click()
+
+time.sleep(2)
+
+PlaceOrder = web.find_element(By.XPATH, '/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div[3]/div/input[3]')
+PlaceOrder.click()
+
+time.sleep(2)
+
+#########
+
+####CalendarDropdown = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/button')
+####CalendarDropdown.click()
+
 
 #finicky one where I select a time
 #<button data-test="sr-timeslot-button" class="WidgetButton-sc-1304nl8-0 TimeSlot__TimeSlotButton-sc-3gsj50-0 iJCtU lfPGKs"><div class="TimeSlot__TimeSlotText-sc-3gsj50-1 jwqCip">5:00 pm</div><div class="TimeSlot__TimeSlotSecondaryText-sc-3gsj50-2 lenWdd">Pickleball </div></button>
-TimeSlot1 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[1]')
-TimeSlot2 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[2]')
-TimeSlot3 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[3]')
-TimeSlot4 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[4]')
-TimeSlot5 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[5]')
+####TimeSlot1 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[1]')
+####TimeSlot2 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[2]')
+###TimeSlot3 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[3]')
+###TimeSlot4 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[4]')
+###TimeSlot5 = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[2]/div/div[2]/div/div/div/div[13]/div/button[5]')
 
-if TimeSlot1.is_enabled():
+"""if TimeSlot1.is_enabled():
     TimeSlot1.click()
 elif TimeSlot2.is_enabled():
     TimeSlot2.click()
@@ -178,4 +233,4 @@ time.sleep(1)
 
 ####while True:
     ####schedule.run_pending()
-    ####time.sleep(1)
+    ####time.sleep(1)""""
