@@ -113,25 +113,25 @@ lastcredit.send_keys(LastNameCredit)
 
 time.sleep(1)
 
-CardNumber = "4400662999140275"
+CardNumber = ""
 number = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[4]/div/div[2]/div[2]/div/div/iframe')
 number.send_keys(CardNumber)
 
 time.sleep(1)
 
-MMYY = "1127"
+MMYY = ""
 my = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[4]/div/div[2]/div[2]/div/div/iframe')
 my.send_keys(MMYY)
 
 time.sleep(1)
 
-CVC = "679"
+CVC = ""
 cvclocation = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[4]/div/div[2]/div[2]/div/div/iframe')
 cvclocation.send_keys(CVC)
 
 time.sleep(1)
 
-ZIP = "02482"
+ZIP = ""
 ziplocation = web.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/div[2]/main/div/div/div[1]/div[4]/div/div[2]/div[2]/div/div/iframe')
 ziplocation.send_keys(ZIP)
 
