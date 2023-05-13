@@ -31,7 +31,7 @@ web = webdriver.Chrome()
 
 web.get('https://clients.mindbodyonline.com/asp/adm/adm_appt_search.asp?studioid=5730220&tabID=102&fl=true')
 
-time.sleep(2)
+WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[3]/div/div/div[2]/div/div[4]/div[1]/input"))).click()
 
 SignIn = web.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div/div[2]/div/div[4]/div[1]/input')
 SignIn.click()
