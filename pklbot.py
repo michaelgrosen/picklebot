@@ -31,91 +31,96 @@ web = webdriver.Chrome()
 
 web.get('https://clients.mindbodyonline.com/asp/adm/adm_appt_search.asp?studioid=5730220&tabID=102&fl=true')
 
-WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[3]/div/div/div[2]/div/div[4]/div[1]/input"))).click()
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[3]/div/div/div[2]/div/div[4]/div[1]/input")))
 
 SignIn = web.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div/div[2]/div/div[4]/div[1]/input')
 SignIn.click()
 
-time.sleep(5)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div/span/div/div/div/main/div/div/form/main/fieldset[1]/div/input")))
+
+
+### element_present = EC.presence_of_element_located((By.ID, 'element_id'))
+### WebDriverWait(driver, timeout).until(element_present)
+
 
 Email = "mrosen6@tulane.edu"
 emailinput = web.find_element(By.XPATH, '/html/body/div/span/div/div/div/main/div/div/form/main/fieldset[1]/div/input')
 emailinput.send_keys(Email)
 
-time.sleep(5)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div/span/div/div/div/main/div/div/form/main/fieldset[2]/div/div/input")))
 
 Password = "*Stew733"
 passwordinput = web.find_element(By.XPATH, '/html/body/div/span/div/div/div/main/div/div/form/main/fieldset[2]/div/div/input')
 passwordinput.send_keys(Password)
 
-time.sleep(5)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div/span/div/div/div/main/div/div/form/section[2]/button/span")))
 
 SignInButton = web.find_element(By.XPATH, '/html/body/div/span/div/div/div/main/div/div/form/section[2]/button/span')
 SignInButton.click()
 
-time.sleep(25)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[1]/div[1]/div[4]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]")))
 
 PickleballCourtRentals = web.find_element(By.XPATH, '/html/body/div[3]/div[1]/div[1]/div[4]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]')
 PickleballCourtRentals.click()
 
-time.sleep(5)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td/input")))
 
 SelectThSNPeak = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td/input')
 SelectThSNPeak.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[5]/div[2]/table/tbody/tr[4]/td/input")))
 
 WhchThSNPeak = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[5]/div[2]/table/tbody/tr[4]/td/input')
 WhchThSNPeak.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[1]")))
 
 NoSunday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[1]')
 NoSunday.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[2]")))
 
 NoMonday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[2]')
 NoMonday.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[3]")))
 
 NoTuesday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[3]')
 NoTuesday.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[4]")))
 
 NoWednesday = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/div[8]/div[2]/div/table/tbody/tr[1]/td/input[4]')
 NoWednesday.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/input[10]")))
 
 SearchForTimes = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/form/div/input[10]')
 SearchForTimes.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.TAG_NAME, "html")))
 
 html = web.find_element(By.TAG_NAME, 'html')
 html.send_keys(Keys.END)
 
-time.sleep(1)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[3]/div/div/div[2]/div/div[6]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[8]/td[3]/a")))
 
 SelectTime = web.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div/div[2]/div/div[6]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[8]/td[3]/a')
 SelectTime.click()
 
-time.sleep(5)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/div/div[2]/div/form/div/input[1]")))
 
 BookAppointment = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/div/div[2]/div/form/div/input[1]')
 BookAppointment.click()
 
-time.sleep(2)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div/div/div/ul/li/div[1]/div")))
 
 PurchaseItem = web.find_element(By.XPATH, '/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div/div/div/ul/li/div[1]/div')
 PurchaseItem.click()
 
-time.sleep(15)
+WebDriverWait(web, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[2]/div[5]/div/div/div[2]/div/div/div[2]/div/form/div/input[1]")))
 
-CheckOut = web.find_element(By.XPATH, '/html/body/div[3]/div[5]/div/div/div[2]/div/div[1]/form/div/div[2]/div[3]/div/input[3]')
+CheckOut = web.find_element(By.XPATH, '/html/body/div[2]/div[5]/div/div/div[2]/div/div/div[2]/div/form/div/input[1]')
 CheckOut.click()
 
 time.sleep(7)
